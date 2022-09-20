@@ -1,6 +1,6 @@
 Небольшой блог-сайт на django
 
-Установка:
+### Установка
 
 ```
 git clone https://github.com/RNDpacman/news_blog.git
@@ -36,6 +36,7 @@ FROM_EMAIL=
 RECIPIENT_LIST=
 ```
 
+### Запуск
 ```
 python ./main.py
 ```
