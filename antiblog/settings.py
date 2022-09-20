@@ -154,16 +154,16 @@ INTERNAL_IPS = [
 
 
 # --------------------------Email--------------------------
-EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST = env('EMAIL_HOST', default='localhost')
 EMAIL_PORT = 465
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='user')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='very_difficult_pass')
 #EMAIL_USE_TLS = True
 EMAIL_USE_SSL = True
-DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
-# -------------------------UseinView----------------------------
-FROM_EMAIL = env('FROM_EMAIL')
-RECIPIENT_LIST = env('RECIPIENT_LIST', cast=list)
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='user@localhost')
+# -------------------------UseInView----------------------------
+FROM_EMAIL = env('FROM_EMAIL', default='user@localhost')
+RECIPIENT_LIST = env('RECIPIENT_LIST', cast=list, default='admins@localhost')
 # ---------------------------------------------------------
 
 CKEDITOR_UPLOAD_PATH = "ckeditor/"
