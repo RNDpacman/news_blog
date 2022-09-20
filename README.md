@@ -53,3 +53,7 @@ login: admin
 password: admin
 ```
 
+При использовании в боевом режиме, отключите режим DEBUG в `settings.py`
+```
+DEBUG = False
+```
