@@ -1,0 +1,6 @@
+Django==4.*
+django-ckeditor==6.5.1
+django-debug-toolbar==3.6.0
+django-environ==0.9.0
+django-simple-captcha==0.5.17
+Pillow==9.2.0

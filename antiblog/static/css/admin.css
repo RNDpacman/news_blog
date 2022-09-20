@@ -1,0 +1,12 @@
+#header, .module h2, .module caption, .inline-group h2{
+    background: #72ac26;
+}
+
+
+
+#module caption, .inline-group h2{
+    font-size: 1.02rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+

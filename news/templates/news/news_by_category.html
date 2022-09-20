@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{{ category.name }}
+{% endblock title %}
+
+{% block content %}
+  {% for news in all_news_by_category %}
+  <div class="card mb-3">
+
+    <div class="card-header">
+      {{ news.category.name }}
+    </div>
+
+    <div class="card-body">
+      
+
+        {% if news.photo %}
+          {% include 'include/_img_news.html' %}
+        {% endif %}
+
+        
+          {% include 'include/card/_title.html' %}
+          {% include 'include/card/_text_preview.html' %}
+          {% include 'include/card/_button.html' %}
+       
+      
+    </div>
+
+    <div class="card-footer">
+      {{ news.created_at|date:'d.m.Y H:i:s' }}
+    </div>
+  </div>
+
+  {% endfor %}
+{% endblock content %}
+
+{% block sidebar %}
+
+  {% include 'include/_sidebar.html' %}
+
+{% endblock sidebar %}

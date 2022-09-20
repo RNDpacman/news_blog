@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{{ news.title }}
+{% endblock title %}
+
+{% block content %}
+  
+  <div class="card mb-3">
+
+    <div class="card-header">
+      <a href="{{ news.category.get_absolute_url }}">
+        {{ news.category.name }} {{ increment_counter }}
+      </a>
+    </div>
+
+    <div class="card-body">
+      
+
+        {% if news.photo %}
+          {% include 'include/_img_news.html' %}
+        {% endif %}
+
+        
+          {% include 'include/card/_title.html' %}
+          {% include 'include/card/_text.html' %}
+      
+    </div>
+
+    <div class="card-footer">
+      {{ news.created_at|date:'d.m.Y H:i:s' }}
+    </div>
+  </div>
+
+  
+{% endblock content %}
+
+{% block sidebar %}
+
+  {% include 'include/_sidebar.html' %}
+
+{% endblock sidebar %}

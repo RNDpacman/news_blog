@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ title }}
+    ::
+    {{ block.super }}
+{% endblock title %}
+
+
+{% block sidebar %}
+
+    {% include 'include/_sidebar.html' %}
+
+{% endblock sidebar %}
+
+
+{% block content %}
+    {% for news in page_obj %}
+        <div class="card mb-3">
+
+            <div class="card-header">
+                <a href="{{ news.category.get_absolute_url }}">
+
+                    {{ news.category.name }}
+
+                </a>
+            </div>
+
+            <div class="card-body">
+
+                {% if news.photo %}
+                    {% include 'include/_img_news.html' %}
+                {% endif %}
+
+                {% include 'include/card/_title.html' %}
+                {% include 'include/card/_text_preview.html' %}
+                {% include 'include/card/_button.html' %}
+            </div>
+
+            <div class="card-footer">
+                {{ news.created_at|date:'d.m.Y H:i:s' }}
+            </div>
+        </div>
+    {% endfor %}
+
+
+{% endblock content %}
