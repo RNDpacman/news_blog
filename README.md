@@ -52,7 +52,7 @@ http://127.0.0.1:8000/admin
 login: admin
 password: admin
 ```
-
+### Внимание
 При использовании в боевом режиме, отключите режим DEBUG в `settings.py`
 ```
 DEBUG = False
