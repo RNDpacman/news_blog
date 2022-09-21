@@ -27,7 +27,9 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY', default='cC4GYo_paEfRAaWTfHyw3pt6T_0PWNmvVfcrLPrNHzlcNkuoIt9QNPFG_lbUSVsvs53RoutT6DmkoX_wDvIMcw')
+SECRET_KEY = env('SECRET_KEY',
+                 default='cC4GYo_paEfRAaWTfHyw3pt6T_0PWNmvVfcrLPrNHzlcNkuoIt9QNPFG_lbUSVsvs53RoutT6DmkoX_wDvIMcw'
+                 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -159,7 +161,7 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='very_difficult_pass')
 EMAIL_USE_SSL = True
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='user@localhost')
 # -------------------------UseInView----------------------------
-FROM_EMAIL = env('FROM_EMAIL', default='user@localhost')
+FROM_EMAIL = env('FROM_EMAIL', default='noreply@localhost')
 RECIPIENT_LIST = env('RECIPIENT_LIST', cast=list, default='admins@localhost')
 # ---------------------------------------------------------
 
@@ -250,5 +252,8 @@ CACHES = {
 # ----------------Validation--------------------------
 MAX_SIZE_UPLOAD_IMAGE = 2**20
 
-#-------------------Pagination------------------------
+# -------------------Pagination------------------------
 PAGINATE_BY = 3
+
+# -----a group that has permission to add news---------
+GROUPS_PERMIT_ADD_NEWS = ['writers',]

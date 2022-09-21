@@ -2,11 +2,12 @@ from .models import News, Categories
 from .forms import AddNewsForm
 from django.shortcuts import get_list_or_404
 from django.views.generic import ListView, DetailView, CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin
 from antiblog import settings
+from .utils import IsPermitGroupMixin
 
 
-class AddNewsView(LoginRequiredMixin, CreateView):
+
+class AddNewsView(IsPermitGroupMixin, CreateView):
     raise_exception = True
     form_class = AddNewsForm
     template_name = 'news/add_news.html'
@@ -34,6 +35,7 @@ class HomeNewsView(ListView):
     ).select_related('category')
     paginate_by = settings.PAGINATE_BY
     extra_context = {'title': 'Главная'}
+    
 
 
 class ByCategoryNewsView(ListView):
